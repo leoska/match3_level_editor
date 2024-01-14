@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Tabs } from "@gravity-ui/uikit";
+import TabContent from "../TabContent";
+import TabTools from "../TabTools";
+import TabSets from "../TabSets";
+import TabSettings from "../TabSettings";
 import "./index.css";
 
 const defaultActiveTab = "tools";
@@ -23,6 +27,14 @@ export default function ToolBar(): JSX.Element {
           { id: "settings", title: "Settings" },
         ]}
         onSelectTab={(tabId: string) => setState({ activeTab: tabId })}
+      />
+      <TabContent
+        tabSelected={state.activeTab}
+        objElementByTabKey={{
+          tools: TabTools,
+          set: TabSets,
+          settings: TabSettings,
+        }}
       />
     </aside>
   );

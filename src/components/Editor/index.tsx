@@ -7,7 +7,15 @@ export default function Editor(): JSX.Element {
   return (
     <div className="editor">
       <ToolBar />
-      <Canvas />
+      <div>
+        <div className="editor-canvas__border-gradient">
+          <Canvas />
+        </div>
+        <p className="editor__instructions">
+          <strong>Click</strong> to paint.
+          <strong>Shift+Click</strong> to remove.
+        </p>
+      </div>
     </div>
   );
 }

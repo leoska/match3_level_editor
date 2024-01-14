@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./index.css";
 
 export default function Canvas(): JSX.Element {
+  const canvasRef = useRef(null);
+
   return (
-    <div>
-      <canvas width="480" height="480" />
-    </div>
+    <canvas
+      ref={canvasRef}
+      className="canvas-editor__border-gradient"
+      width="480"
+      height="480"
+    />
   );
 }

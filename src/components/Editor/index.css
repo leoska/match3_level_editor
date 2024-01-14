@@ -4,3 +4,18 @@
     display: flex;
     flex-direction: row;
 }
+
+.editor__instructions {
+    font-size: 0.8em;
+    color: #aaa;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.editor-canvas__border-gradient {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+}
