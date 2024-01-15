@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "@gravity-ui/uikit";
 import { Provider } from "react-redux";
-import store from "./store";
+import { setupStore } from "./store/store";
 import App from "./App";
 import "@gravity-ui/uikit/styles/fonts.css";
 import "@gravity-ui/uikit/styles/styles.css";
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={setupStore()}>
       <ThemeProvider theme="light">
         <App />
       </ThemeProvider>

@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/Header";
-import Editor from "./components/Editor";
+import Header from "./containers/Header";
+import Editor from "./containers/Editor";
 import "./App.css";
 
 export default function App(): JSX.Element {

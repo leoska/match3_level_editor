@@ -8,17 +8,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "public/index.html",
     }),
-    // new CopyPlugin({
-    //   patterns: [{ from: "src/icons" }],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/assets/gems",
+          to: path.resolve(__dirname, "..", "build", "assets", "gems"),
+        },
+        {
+          from: "src/assets/board",
+          to: path.resolve(__dirname, "..", "build", "assets", "board"),
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
-      //   {
-      //     test: /\.tsx?$/,
-      //     use: "ts-loader",
-      //     exclude: /node_modules/,
-      //   },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
@@ -52,7 +56,8 @@ module.exports = {
   },
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "..", "build"),
+    publicPath: "/",
     clean: true,
   },
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import ToolBar from "../ToolBar";
-import Canvas from "../Canvas";
+import Canvas from "../../components/Canvas";
 import "./index.css";
 
 export default function Editor(): JSX.Element {
