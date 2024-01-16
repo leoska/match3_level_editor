@@ -1,6 +1,6 @@
 import React from "react";
 import ToolBar from "../ToolBar";
-import Canvas from "../../components/Canvas";
+import Board from "../Board";
 import "./index.css";
 
 export default function Editor(): JSX.Element {
@@ -9,7 +9,7 @@ export default function Editor(): JSX.Element {
       <ToolBar />
       <div>
         <div className="editor-canvas__border-gradient">
-          <Canvas />
+          <Board />
         </div>
         <p className="editor__instructions">
           <strong>Click</strong> to paint.

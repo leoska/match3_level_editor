@@ -1,0 +1,11 @@
+.tab-settings {
+    width: 100%;
+    padding: 4px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-settings__label {
+    width: 100%;
+}

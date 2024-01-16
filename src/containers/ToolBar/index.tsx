@@ -16,7 +16,7 @@ interface ITabItem {
 
 const tabItems: ITabItem[] = [
   { id: "tools" as TabType, title: "Tools" },
-  { id: "subTools" as TabType, title: "Set" },
+  { id: "subTools" as TabType, title: "Gems" },
   { id: "settings" as TabType, title: "Settings" },
 ];
 

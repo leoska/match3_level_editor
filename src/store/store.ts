@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import toolReducer from './reducers/ToolsSlice';
+import boardReducer from './reducers/BoardSlice';
 
 
 const rootReducer = combineReducers({
     toolReducer,
+    boardReducer,
 });
 
 export const setupStore = () => {
