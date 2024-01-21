@@ -1,4 +1,4 @@
 export default interface IPen {
-    isMouseDown: boolean;
-    currentLayer: "gems";
+  isMouseDown: boolean;
+  currentLayer: "gems";
 }

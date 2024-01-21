@@ -1,3 +1,3 @@
 export default interface ILayers {
-    gems: number[];
+  gems: number[];
 }
