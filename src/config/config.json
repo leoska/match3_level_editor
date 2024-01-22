@@ -2,13 +2,29 @@
     "field": {
         "default": {
             "width": 9,
-            "height": 9
+            "height": 9,
+            "targetMoves": 25
         }
     },
     "layers": [
+        "fields",
         "gems"
     ],
     "tools": {
+        "field": {
+            "name": "field",
+            "layer": "fields",
+            "subtools": [
+                {
+                    "id": 1,
+                    "name": "nofield"
+                },
+                {
+                    "id": 2,
+                    "name": "field"
+                }
+            ]
+        },
         "gems": {
             "name": "gems",
             "layer": "gems",
@@ -53,7 +69,7 @@
                     "id": 17,
                     "name": "blue"
                 }
-            ],
+            ]
         }
     }
 }

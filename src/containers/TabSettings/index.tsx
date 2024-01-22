@@ -42,6 +42,19 @@ export default function TabSettings(): JSX.Element {
           ></TextInput>
         </p>
       </Card>
+      <Card>
+        <Label className="tab-settings__label">
+          <h3>Available moves</h3>
+        </Label>
+        <p>
+          <TextInput
+            label={"Moves"}
+            placeholder="0-2147483647"
+            defaultValue="25"
+            type="number"
+          ></TextInput>
+        </p>
+      </Card>
     </div>
   );
 }

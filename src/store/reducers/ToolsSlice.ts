@@ -1,30 +1,35 @@
 import type IGem from "../../types/IGem";
-import gemsConfig from "../../config/gems.json";
+import config from "../../utils/config";
+import type { ISubToolConfig } from "../../types/IConfig";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IToolsState {
-    toolType: string;
-    subTool: IGem | null;
+  toolType: string;
+  subTool: IGem | null;
 }
 
 const initialState: IToolsState = {
-    toolType: 'gems',
-    subTool: gemsConfig[0],
-}
+  toolType: "",
+  subTool: null,
+};
 
 export const toolSlice = createSlice({
-    name: 'tool',
-    initialState,
-    reducers: {
-        selectSubTool(state: IToolsState, action: PayloadAction<number>) {
-            const newSubTool = gemsConfig.find(({ id }: IGem) => id === action.payload);
+  name: "tool",
+  initialState,
+  reducers: {
+    selectSubTool(state: IToolsState, action: PayloadAction<number>) {
+      const toolConfig = config.getTool(state.toolType);
 
-            if (newSubTool === undefined)
-                throw new Error('Selected sub-tool not found in config!');
+      const newSubTool = toolConfig.subtools.find(
+        ({ id }: ISubToolConfig) => id === action.payload,
+      );
 
-            state.subTool = newSubTool;
-        }
-    }
+      if (newSubTool === undefined)
+        throw new Error("Selected sub-tool not found in config!");
+
+      state.subTool = newSubTool as IGem;
+    },
+  },
 });
 
 export default toolSlice.reducer;
