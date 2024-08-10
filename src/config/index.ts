@@ -8,22 +8,12 @@ const config = deepFreeze(rawConfig) as IConfig;
 
 export class Config {
   private field: IFieldConfig;
-  private tools: Map<string, ITool>;
   private gems: Map<string, IGem>;
   private defaultGemName: string;
 
   constructor() {
     this.field = config.field as IFieldConfig;
-    this.tools = new Map<string, ITool>();
     this.gems = new Map<string, IGem>();
-
-    for (const [name, tool] of Object.entries(config.tools)) {
-      if (this.tools.has(name)) {
-        throw new Error(`Tool ${name} already exists`);
-      }
-
-      this.tools.set(name, tool as ITool);
-    }
 
     for (const gem of config.gems) {
       if (this.gems.has(gem.name)) {
@@ -48,8 +38,8 @@ export class Config {
     return this.field.default.height;
   }
 
-  get defaultGemID(): number {
-    return (this.gems.get(config.defaultGemName) as IGem).id;
+  get defaultGem(): string {
+    return this.defaultGemName;
   }
 }
 

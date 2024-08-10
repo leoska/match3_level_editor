@@ -6,16 +6,6 @@
             "targetMoves": 25
         }
     },
-    "tools": {
-        "nofield": {
-            "id": 1,
-            "name": "nofield"
-        },
-        "field": {
-            "id": 2,
-            "name": "field"
-        }
-    },
     "gems": [
         {
             "id": 1,

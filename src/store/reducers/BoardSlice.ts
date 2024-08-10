@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Config from "../../config";
-import type IGem from "../../types/IGem";
+import { IGemItem } from "../../types/IGem";
 
 const DEFAULT_BOARD_WIDTH = 9;
 const DEFAULT_BOARD_HEIGHT = 9;
@@ -12,7 +12,7 @@ interface IBoardState {
     width: number;
     height: number;
     randomSeed?: number;
-    gems: number[];
+    gems: IGemItem[];
 }
 
 export interface CellPayload {
@@ -23,7 +23,7 @@ export interface CellPayload {
 const initialState: IBoardState = {
     width: boardWidth,
     height: boardHeight,
-    gems: Array(boardWidth * boardHeight).fill(Config.defaultGemID),
+    gems: [],
 }
 
 export const boardSlice = createSlice({
@@ -37,8 +37,8 @@ export const boardSlice = createSlice({
             state.height = action.payload;
         },
         setGem(state: IBoardState, action: PayloadAction<CellPayload>) {
+            // TODO: написать фабрику классов Gem
             state.gems[action.payload.pos] = action.payload.value;
-            state.layers.gems[action.payload.pos]
         },
     },
 });
