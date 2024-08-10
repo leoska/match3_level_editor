@@ -3,7 +3,7 @@ import Cell from "../../components/Cell";
 import { useAppSelector } from "../../store/hooks";
 import { boardSlice } from "../../store/reducers/BoardSlice";
 import { useAppDispatch } from "../../store/hooks";
-import gemsConfig from "../../config/gems.json";
+import gemsConfig from "../../../config/gems.json";
 import IGem from "../../types/IGem";
 import type { CellPayload } from "../../store/reducers/BoardSlice";
 import "./index.css";

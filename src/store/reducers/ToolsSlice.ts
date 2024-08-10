@@ -1,5 +1,4 @@
 import type IGem from "../../types/IGem";
-import config from "../../utils/config";
 import type { ISubToolConfig } from "../../types/IConfig";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 

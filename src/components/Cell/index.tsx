@@ -1,4 +1,5 @@
-import React from "react";
+import React, { CSSProperties, ReactElement } from "react";
+import type * as CSS from 'csstype';
 import cn from "classnames";
 import "./index.css";
 
@@ -12,15 +13,17 @@ export default function Cell({
   light,
   gemName,
   onClick,
-}: ICellProps): JSX.Element {
-  const style = {};
-  if (gemName) style["backgroundImage"] = `url(assets/gems/${gemName}.png)`;
+}: ICellProps): ReactElement {
+  const style: CSSProperties = {};
+  if (gemName) {
+    style.backgroundImage = `url(assets/gems/${gemName}.png)` as CSS.Property.BackgroundImage;
+  }
 
   return (
     <div
       className={cn("cell", { cell__light: light, cell__shadow: !light })}
       style={style}
       onClick={onClick}
-    ></div>
+    />
   );
 }

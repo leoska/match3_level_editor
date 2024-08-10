@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Tabs } from "@gravity-ui/uikit";
 import TabContent from "../TabContent";
 import TabTools from "../TabTools";
-import TabSubTools from "../TabSubTools";
+import TabSubTools from "../TabGems";
 import TabSettings from "../TabSettings";
 import "./index.css";
 
